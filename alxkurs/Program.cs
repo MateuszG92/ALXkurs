@@ -1,4 +1,7 @@
 ﻿using alxkurs.Lessons;
+using alxkurs.Assigments;
+
+
 
 // Console.Write("Mateusz");
 // Console.WriteLine("\nALX");
@@ -6,4 +9,6 @@
 
 // L1SimpleVariables.Test(); 
 //L1Strings.Test();
-L1Spiders.Test();
+//L1Spiders.Test();
+
+AssigmentsDemo.Run();

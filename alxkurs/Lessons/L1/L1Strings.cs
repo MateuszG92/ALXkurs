@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace alxkurs.Lessons
+namespace alxkurs.Lessons.L1
 {
     public class L1Strings
     {
@@ -29,7 +29,7 @@ namespace alxkurs.Lessons
         {
             word = word + extansion;
         }
-        
+
 
     }
 }

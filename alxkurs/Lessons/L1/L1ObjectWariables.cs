@@ -1,7 +1,6 @@
-﻿
-using alxkurs.Lessons.classes;
+﻿using alxkurs.Lessons.classes;
 
-namespace alxkurs.Lessons
+namespace alxkurs.Lessons.L1
 {
     public class L1ObjectWariables
     {
@@ -14,10 +13,10 @@ namespace alxkurs.Lessons
             dog.Name = "Burek";
             dog.Age = 5;
             dog.Race = "golden retriver";
-            Console.WriteLine("Attention here is "+ dog.Name);
+            Console.WriteLine("Attention here is " + dog.Name);
             Console.WriteLine("Race " + dog.Race);
             Console.WriteLine("Age " + dog.Age);
-            
+
         }
         public static void Test2()
         {
