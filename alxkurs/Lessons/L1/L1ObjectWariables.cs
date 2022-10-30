@@ -1,4 +1,4 @@
-﻿using alxkurs.Lessons.classes;
+﻿using alxkurs.Lessons.L1.classes;
 
 namespace alxkurs.Lessons.L1
 {

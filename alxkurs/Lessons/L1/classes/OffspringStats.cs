@@ -1,4 +1,4 @@
-﻿namespace alxkurs.Lessons.classes
+﻿namespace alxkurs.Lessons.L1.classes
 {
     public class OffspringStats
     {
