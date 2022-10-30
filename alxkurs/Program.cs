@@ -1,14 +1,16 @@
 ﻿using alxkurs.Lessons;
 using alxkurs.Assigments;
+using alxkurs.Lessons.L2;
 
 
 
-// Console.Write("Mateusz");
-// Console.WriteLine("\nALX");
-// L1ObjectWariables.Test2();
+Console.Write("Mateusz");
+Console.WriteLine("\nALX Kurs\n--------------");
+// L1ObjectWariables.Run2();
 
-// L1SimpleVariables.Test(); 
-//L1Strings.Test();
-//L1Spiders.Test();
-
-AssigmentsDemo.Run();
+// L1SimpleVariables.Run(); 
+//L1Strings.Run();
+//L1Spiders.Run();
+//AssigmentsDemo.Run();
+//L2Conditionals.Run();
+L2EnumsSwitch.Run();

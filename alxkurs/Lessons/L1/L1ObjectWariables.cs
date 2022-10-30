@@ -4,7 +4,7 @@ namespace alxkurs.Lessons.L1
 {
     public class L1ObjectWariables
     {
-        public static void Test1()
+        public static void Run1()
         {
             Console.WriteLine("test");
             Dog dog = new Dog();
@@ -18,7 +18,7 @@ namespace alxkurs.Lessons.L1
             Console.WriteLine("Age " + dog.Age);
 
         }
-        public static void Test2()
+        public static void Run2()
         {
             Dog dog2 = new Dog();
             dog2.Name = "skiper";

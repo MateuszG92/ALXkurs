@@ -8,7 +8,7 @@ namespace alxkurs.Lessons.L1.classes
 {
     public class L1Strings
     {
-        public static void Test()
+        public static void Run()
         {
             string name = "Mateusz";
             Console.WriteLine(name);

@@ -9,7 +9,7 @@ namespace alxkurs.Lessons.L1.classes
 {
     public class L1Spiders
     {
-        public static void Test()
+        public static void Run()
         {
             var spider = new Spider();
             spider.Color = "black";

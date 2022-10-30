@@ -8,7 +8,7 @@ namespace alxkurs.Lessons.L1.classes
 {
     public class L1SimpleVariables
     {
-        public static void Test()
+        public static void Run()
         {
             bool WhySoSeurois = false;
             Console.WriteLine(WhySoSeurois);
