@@ -17,5 +17,6 @@ namespace AlxCourseHomework.MailingService
          
             Console.WriteLine($"The email has been sent from: {property.From} \nTo: {property.To} \nSubject: {property.Subject} \nMessage: {property.Message} \nEnd\n________________");
         }
+
     }
 }

@@ -11,6 +11,7 @@ namespace AlxCourseHomework.MailingService
     {
         public static void Run()
         {
+
             var email1 = new EmailService();
             Email newEmail1 = new Email();
             newEmail1.From = "Mateusz";
