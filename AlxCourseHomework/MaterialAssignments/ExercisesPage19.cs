@@ -15,16 +15,16 @@ namespace AlxCourseHomework.MaterialAssignments
             var purchaseSum = Int32.Parse(Console.ReadLine());
             CheckPurchaseRabat(purchaseSum);
         }
-        private static void CheckPurchaseRabat(double purchaseSum, double up = 100, double down = 60)
+        private static void CheckPurchaseRabat(double purchaseSum, double upperDiscountBoundary = 100, double lowerDiscountBoundary = 60)
         {
             double discountBig = 15;
             double discountMiddle = 5;
 
-            if (purchaseSum <= down)
+            if (purchaseSum <= lowerDiscountBoundary)
             {
                 Console.WriteLine($"Purchase sum - {purchaseSum} \nDiscount - 0%\nAmount after doscount {purchaseSum}.");
             }
-            else if (purchaseSum > up)
+            else if (purchaseSum > upperDiscountBoundary)
             {
                 Console.WriteLine($"Purchase sum - {purchaseSum} \nDiscount - {discountBig}%\nAmount after doscount {purchaseSum *(( 100-discountBig)/100) }.");
             }
@@ -39,14 +39,14 @@ namespace AlxCourseHomework.MaterialAssignments
             var purchaseSum = Int32.Parse(Console.ReadLine());
             double discountBig = 15;
             double discountMiddle = 5;
-            const int up = 100;
-            const int down = 60;
+            const int upperDiscountBoundary = 100;
+            const int lowerDiscountBoundary = 60;
             switch (purchaseSum)
             {
-                case > up:
+                case > upperDiscountBoundary:
                     Console.WriteLine($"Purchase sum - {purchaseSum} \nDiscount - {discountBig}%\nAmount after doscount {purchaseSum * ((100 - discountBig) / 100)}.");
                     break;
-                case <=down:               
+                case <= lowerDiscountBoundary:               
                     Console.WriteLine($"Purchase sum - {purchaseSum} \nDiscount - 0%\nAmount after doscount {purchaseSum}.");
                     break;
                 default:
