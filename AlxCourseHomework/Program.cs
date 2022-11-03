@@ -20,4 +20,9 @@ ExercisesPage17.Run21();
 Console.WriteLine("\nExercise 2.2");
 Console.WriteLine("____________\n");
 ExercisesPage17.Run22();
-
+Console.WriteLine("\nExercise 3.1");
+Console.WriteLine("____________\n");
+ExercisesPage19.Run31();
+Console.WriteLine("\nExercise 3.2");
+Console.WriteLine("____________\n");
+ExercisesPage19.Run32();
