@@ -44,7 +44,7 @@ namespace ALXCalculator
         }
         private double Add(double x, double y)
         {
-            return x+ y;
+            return x + y;
         }
         private double Multiply(double x, double y)
         {
