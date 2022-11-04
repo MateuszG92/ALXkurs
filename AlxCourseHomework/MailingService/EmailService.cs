@@ -12,10 +12,10 @@ namespace AlxCourseHomework.MailingService
 {
     public class EmailService
     {
-        public void SendEmail(Email property)
+        public static void SendEmail(string from, string to, string message, string subject)
         {
          
-            Console.WriteLine($"The email has been sent from: {property.From} \nTo: {property.To} \nSubject: {property.Subject} \nMessage: {property.Message} \nEnd\n________________");
+            Console.WriteLine($"The email has been sent from: {from} \nTo: {to} \nSubject: {subject} \nMessage: {message} \nEnd\n________________");
         }
 
     }

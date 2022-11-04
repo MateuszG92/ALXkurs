@@ -2,9 +2,9 @@
 using AlxCourseHomework.MailingService;
 using AlxCourseHomework.MaterialAssignments;
 
-//Console.WriteLine("Email Service");
-//Console.WriteLine("_____________");
-//Homework1Test.Run();
+Console.WriteLine("Email Service");
+Console.WriteLine("_____________");
+Homework1Test.Run();
 Console.WriteLine("\nExercise 1.1");
 Console.WriteLine("____________\n");
 ExercisesPage12.Run11();
