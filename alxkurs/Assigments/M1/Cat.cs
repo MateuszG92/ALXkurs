@@ -1,10 +1,11 @@
 ﻿using System;
-namespace alxkurs.Assigments.classes
+
+namespace alxkurs.Assigments.M1
 {
 
-public class Cat
-{
-	
+    public class Cat
+    {
+
         public string Name;
         public string Color;
         public int Age;
@@ -13,12 +14,12 @@ public class Cat
         {
             Name = name;
             Color = color;
-            Age = age; 
+            Age = age;
         }
         public Cat(string color, int age)
         {
             Color = color;
-            Age=age;
+            Age = age;
         }
 
         public void Jump()

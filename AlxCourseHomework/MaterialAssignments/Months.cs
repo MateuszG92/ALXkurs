@@ -19,6 +19,6 @@ namespace AlxCourseHomework.MaterialAssignments
         September,
         October,
         November,
-        December,
+        December
     }
 }

@@ -50,6 +50,7 @@ namespace AlxCourseHomework.MaterialAssignments
                 Console.WriteLine("The negation of a disjunction is the conjunction of the negations and The negation of a conjunction is the disjunction of the negations");
             }
             else { Console.WriteLine("It won't happen"); }
+           
             return pt;
         }
     }

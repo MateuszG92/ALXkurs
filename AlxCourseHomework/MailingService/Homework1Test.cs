@@ -19,18 +19,21 @@ namespace AlxCourseHomework.MailingService
             newEmail1.Message = "Message1";
             newEmail1.Subject = "Subject1";
             EmailService.SendEmail(newEmail1.From, newEmail1.To, newEmail1.Message, newEmail1.Subject);
+            
             Email newEmail2 = new Email();
             newEmail2.From = "Mateusz";
             newEmail2.To = "To2";
             newEmail2.Message = "Message2";
             newEmail2.Subject = "Subject2";
             EmailService.SendEmail(newEmail2.From, newEmail2.To, newEmail2.Message, newEmail2.Subject);
+            
             Email newEmail3 = new Email();
             newEmail3.From = "Mateusz";
             newEmail3.To = "To3";
             newEmail3.Message = "Message3";
             newEmail3.Subject = "Subject3";
             EmailService.SendEmail(newEmail3.From, newEmail3.To, newEmail3.Message, newEmail3.Subject);
+           
             Email newEmail4 = new Email();
             newEmail4.From = "Mateusz";
             newEmail4.To = "To4";
