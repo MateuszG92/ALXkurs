@@ -2,6 +2,7 @@
 using alxkurs.Assigments;
 using alxkurs.Lessons.M1.L2;
 using alxkurs.Assigments.M2;
+using alxkurs.Lessons.M2.L1;
 
 
 
@@ -15,4 +16,12 @@ Console.WriteLine("\nALX Kurs\n--------------");
 //AssigmentsDemo.Run();
 //L2Conditionals.Run();
 //L2EnumsSwitch.Run();
-SeniorityServiceTest.Run(); 
+//SeniorityServiceTest.Run(); 
+//L1Arrays.Run();
+//L1Lists.Run(); 
+//L1Arrays.Run1();
+//L1Loops.RunForeach();
+//L1Loops.RunFor();
+//L1Loops.RunDoWhile();
+L1Dictionaries.Run1(); 
+
