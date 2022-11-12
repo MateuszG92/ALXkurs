@@ -14,6 +14,5 @@ namespace AlxCourseHomework.MailingService
         public string To;
         public string Subject;
         public string Message;
-
     }
 }

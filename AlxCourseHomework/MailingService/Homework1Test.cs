@@ -11,8 +11,6 @@ namespace AlxCourseHomework.MailingService
     {
         public static void Run()
         {
-
-
             Email newEmail1 = new Email();
             newEmail1.From = "Mateusz";
             newEmail1.To = "To1";
@@ -47,7 +45,6 @@ namespace AlxCourseHomework.MailingService
             newEmail5.Message = "Message5";
             newEmail5.Subject = "Subject5";
             EmailService.SendEmail(newEmail5.From,newEmail5.To,newEmail5.Message,newEmail5.Subject);
-
         }
     }
 }
