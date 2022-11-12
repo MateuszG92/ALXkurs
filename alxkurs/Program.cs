@@ -1,6 +1,6 @@
 ﻿using alxkurs.Lessons;
 using alxkurs.Assigments;
-using alxkurs.Lessons.L2;
+using alxkurs.Lessons.M1.L2;
 using alxkurs.Assigments.M2;
 
 

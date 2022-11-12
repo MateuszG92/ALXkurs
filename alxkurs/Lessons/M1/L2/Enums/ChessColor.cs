@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace alxkurs.Lessons.L2.Enums
+namespace alxkurs.Lessons.M1.L2.Enums
 {
     public enum ChessColor
     {

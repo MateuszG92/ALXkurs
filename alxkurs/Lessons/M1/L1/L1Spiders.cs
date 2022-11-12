@@ -1,11 +1,11 @@
-﻿using alxkurs.Lessons.L1.classes;
+﻿using alxkurs.Lessons.M1.L1.classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 //constructors
-namespace alxkurs.Lessons.L1.classes
+namespace alxkurs.Lessons.M1.L1.classes
 {
     public class L1Spiders
     {

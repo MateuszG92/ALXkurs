@@ -1,6 +1,6 @@
-﻿using alxkurs.Lessons.L1.classes;
+﻿using alxkurs.Lessons.M1.L1.classes;
 
-namespace alxkurs.Lessons.L1
+namespace alxkurs.Lessons.M1.L1
 {
     public class L1ObjectWariables
     {
