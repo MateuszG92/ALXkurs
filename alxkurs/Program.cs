@@ -25,5 +25,7 @@ Console.WriteLine("\nALX Kurs\n--------------");
 //L1Loops.RunDoWhile();
 //L1Dictionaries.Run1(); 
 //L2GettersAndSetters.Run();
-BookStorageApp.Run();
+//BookStorageApp.Run();
 //L2Encapsulation.Run();
+//L2Interfaces.Run();
+L2Inharitance.Run();
