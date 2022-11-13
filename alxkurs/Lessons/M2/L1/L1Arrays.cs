@@ -61,7 +61,7 @@ namespace alxkurs.Lessons.M2.L1
             {
                 for (int iterator1 = 0; iterator1 < matrix.GetLength(1); iterator1++)
                 {
-                    Console.WriteLine($"{matrix[iterator,iterator1]} ");
+                    Console.Write($"{matrix[iterator,iterator1]} ");
                 }
                 Console.WriteLine();
             }

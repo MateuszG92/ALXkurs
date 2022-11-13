@@ -20,8 +20,7 @@ namespace AlxCourseHomework.MaterialAssignments
             string Sex = "Male";
             long PeselNumber = 92180900000;
 
-            Console.WriteLine($"Name - {Name}\nLast name - {LastName}\nAge - {Age}\nHight - {Hight}\nSex - {Sex} \nPesel - {PeselNumber}");
-            
+            Console.WriteLine($"Name - {Name}\nLast name - {LastName}\nAge - {Age}\nHight - {Hight}\nSex - {Sex} \nPesel - {PeselNumber}");      
         }
         public static void Run12()
         {
@@ -34,7 +33,6 @@ namespace AlxCourseHomework.MaterialAssignments
             long PeselNumber = 92180900000;
 
             Console.WriteLine($"Name - {Name}\nLast name - {LastName}\nAge - {Age}\nHight - {HightInt}\nSex - {Sex} \nPesel - {PeselNumber}");
-
         }
         public static void Run13()
         {
@@ -44,7 +42,5 @@ namespace AlxCourseHomework.MaterialAssignments
             Console.WriteLine($"Today is {today} {todaysMonth} {year}");
             
         }
-     
-
     }
 }

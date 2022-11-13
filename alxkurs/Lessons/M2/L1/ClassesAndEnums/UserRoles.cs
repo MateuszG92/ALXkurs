@@ -12,6 +12,5 @@ namespace alxkurs.Lessons.M2.L1.ClassesAndEnums
         USER,
         SUPERVISOR,
         DATA_CONTRACTOR
-
     }
 }

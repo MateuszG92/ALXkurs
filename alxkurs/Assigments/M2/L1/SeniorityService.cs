@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using alxkurs.Assigments.M2;
 
-namespace alxkurs.Assigments.M2
+namespace alxkurs.Assigments.M2.L1
 {
     public class SeniorityService
     {
@@ -26,7 +25,7 @@ namespace alxkurs.Assigments.M2
             {
                 JuniorEmployees.Add(employee);
             }
-            else if (employee.Salary > 10000) 
+            else if (employee.Salary > 10000)
             {
                 SeniorEmployees.Add(employee);
             }
@@ -35,7 +34,7 @@ namespace alxkurs.Assigments.M2
                 MidEmployees.Add(employee);
             }
         }
-        
+
         public void ClassifySeniorityByExperience(Employee employee)
         {
             if (employee.Experience < 4)

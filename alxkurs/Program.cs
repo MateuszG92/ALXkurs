@@ -3,8 +3,8 @@ using alxkurs.Assigments;
 using alxkurs.Lessons.M1.L2;
 using alxkurs.Assigments.M2;
 using alxkurs.Lessons.M2.L1;
-
-
+using alxkurs.Lessons.M2.L2;
+using alxkurs.Assigments.M2.L2;
 
 Console.Write("Mateusz");
 Console.WriteLine("\nALX Kurs\n--------------");
@@ -23,5 +23,7 @@ Console.WriteLine("\nALX Kurs\n--------------");
 //L1Loops.RunForeach();
 //L1Loops.RunFor();
 //L1Loops.RunDoWhile();
-L1Dictionaries.Run1(); 
-
+//L1Dictionaries.Run1(); 
+//L2GettersAndSetters.Run();
+BookStorageApp.Run();
+//L2Encapsulation.Run();

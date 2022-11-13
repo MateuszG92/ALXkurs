@@ -4,22 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using alxkurs.Assigments.M1;
-using alxkurs.Assigments.M2;
 
-namespace alxkurs.Assigments.M2
+namespace alxkurs.Assigments.M2.L1
 {
     public class SeniorityServiceTest
     {
         public static void Run()
         {
             var employee1 = new Employee("Ziutek", 3000, 6);
-            var employee2 = new Employee("Zbyszek", 8000,12);
-            var employee3 = new Employee("Zdzichu",12000,3);
+            var employee2 = new Employee("Zbyszek", 8000, 12);
+            var employee3 = new Employee("Zdzichu", 12000, 3);
             var seniorityService = new SeniorityService();
             seniorityService.ClassifySeniorityByExperience(employee1);
             seniorityService.ClassifySeniorityByExperience(employee2);
             seniorityService.ClassifySeniorityByExperience(employee3);
-           
+
             Console.WriteLine("Clasification by Experience");
             Console.WriteLine("Junors: ");
             PresentEmployees(seniorityService.JuniorEmployees);
@@ -42,9 +41,9 @@ namespace alxkurs.Assigments.M2
             PresentEmployees(seniorityService.SeniorEmployees);
         }
 
-        public static void PresentEmployees (List<Employee> employees)
+        public static void PresentEmployees(List<Employee> employees)
         {
-            foreach(var employee in employees)
+            foreach (var employee in employees)
             {
                 Console.WriteLine($"Employee: {employee.Name}");
             }

@@ -18,7 +18,6 @@ namespace AlxCourseHomework.MaterialAssignments
             bool e = d + 5 > a;
             Console.WriteLine($"Is result increased by 5 more than {a}? - {e}");
             return d;
-
         }
         public static bool Run22()
         {
