@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using AlxCourseHomework.MailingService;
 using AlxCourseHomework.MaterialAssignments;
+using AlxCourseHomework.MaterialAssignments.Project1;
 
 Console.WriteLine("Email Service");
 Console.WriteLine("_____________");
