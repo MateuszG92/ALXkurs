@@ -12,7 +12,6 @@ namespace AlxCourseHomework.MaterialAssignments
         public double NettoPrice;
         public double InventoryNettoPrice;
         public double Tax;
-        public double Price;
         public Car()
         {
 

@@ -10,7 +10,7 @@ namespace AlxCourseHomework.MaterialAssignments
 {
     public class ExercisesPage45
     {
-        public static void Run41()
+        public static void Run71()
         {
             string price;
             Car car1 = new Car("BMW", 50000, 20000, 0.23);
@@ -26,7 +26,7 @@ namespace AlxCourseHomework.MaterialAssignments
             price = car3.CarBruttoPrice().ToString();
             Console.WriteLine($"Car brutto price: " + price);
         }
-        public static void Run42()
+        public static void Run72()
         {
             Console.Write("Enter your name (write END to exit): ");
             var name = Console.ReadLine();
