@@ -10,7 +10,6 @@ namespace ALXShootingRange.Guns
     {
         public SMG() : base(EnumTypeOfGuns.SMG)
         {
-            Type = EnumTypeOfGuns.SMG;
         }
     }
 }

@@ -25,12 +25,12 @@ namespace ALXShootingRange
             var wantToAddNextGun = Console.ReadLine().ToUpper();
             while (wantToAddNextGun == "Y")
             {
-                Console.WriteLine("Enter chosen gun: ");
+                Console.Write("Enter chosen gun: ");
                 EnumTypeOfGuns chosenGun = (EnumTypeOfGuns)Enum.Parse(typeof(EnumTypeOfGuns), Console.ReadLine().ToUpper());
                 if (Enum.IsDefined(typeof(EnumTypeOfGuns), chosenGun))
                 {
-                    AddGun(chosenGun);
-                    Console.WriteLine("Want to add next gun (Y/N)? ");
+                    AddShootingWithChosenGun(chosenGun);
+                    Console.WriteLine("Write Y to add new shot or N to show shooting list ");
                     wantToAddNextGun = Console.ReadLine().ToUpper();
                 }
                 else
@@ -49,20 +49,29 @@ namespace ALXShootingRange
                 }
                 else
                 {
-                    Console.WriteLine("Ending program.");
-                    return;
+                    Console.Write("Sayonara.");
                 }
             }
 
-            void AddGun(EnumTypeOfGuns choosingGun)
+            void AddShootingWithChosenGun(EnumTypeOfGuns choosingGun)
             {
                 Gun newGun = new Gun(choosingGun);
                 Console.WriteLine("You chose: " + newGun.Type.ToString());
+                ListOfUsedGuns.Add(newGun.Type.ToString());
+                Console.Write("Full auto or single action (F/S)? ");
+                var shootingTypeChoice = Console.ReadLine().ToUpper();
                 Console.Write("Enter number of shots: ");
                 var chosenNumberOfShots = Int32.Parse(Console.ReadLine());
-                ListOfUsedGuns.Add(newGun.Type.ToString());
                 ShotsPerGun.Add(chosenNumberOfShots);
-                PricePerGun.Add(newGun.ShootingCost(chosenNumberOfShots));
+                switch (shootingTypeChoice)
+                {
+                    case "S":
+                        PricePerGun.Add(Math.Round(newGun.ShootingSACost(chosenNumberOfShots),2));
+                        break;
+                    case "F":
+                        PricePerGun.Add(Math.Round(newGun.ShootingFACost(chosenNumberOfShots),2));
+                        break;
+                }
             }    
 
             void ShowList()

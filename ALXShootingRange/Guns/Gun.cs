@@ -19,10 +19,14 @@ namespace ALXShootingRange.Guns
             OneShotCost = 1;
         }
 
-        public double ShootingCost(int numberOfShots)
+        public double ShootingSACost(int numberOfShots)
         {
             NumberOfShots=numberOfShots;
             return OneShotCost*numberOfShots;
+        }
+        public double ShootingFACost(int numberOfShots)
+        {
+            return ShootingSACost(numberOfShots)*1.15;
         }
     }
 }

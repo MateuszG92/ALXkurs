@@ -8,7 +8,7 @@ namespace ALXShootingRange.Interfaces
 {
     public interface IShooitingRange
     {
-        double ShootingCost(int numberOfShots);
-
+        double ShootingSACost(int numberOfShots);
+        double ShootingFACost(int numberOfShots);
     }
 }
