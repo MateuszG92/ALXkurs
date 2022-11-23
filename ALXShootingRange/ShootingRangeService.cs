@@ -10,16 +10,15 @@ namespace ALXShootingRange
 {
     public class ShootingRangeService
     {
+
         public static void Run()
         {
-            List<string> ListOfUsedGuns = new List<string>();
-            List<int> ShotsPerGun = new List<int>();
-            List<double> PricePerGun = new List<double>();
+            var addingGun=new AddingGun();
             Console.WriteLine("Welcom in shooting range");
             Console.WriteLine("Guns list");
-            foreach (var gun in Enum.GetValues(typeof(EnumTypeOfGuns)))
+            foreach (var gunType in Enum.GetValues(typeof(EnumTypeOfGuns)))
             {
-                Console.WriteLine(gun);
+                Console.WriteLine(gunType);
             }
             Console.WriteLine("Want to create new shooting list? (Y/N)"); 
             var wantToAddNextGun = Console.ReadLine().ToUpper();
@@ -29,7 +28,7 @@ namespace ALXShootingRange
                 EnumTypeOfGuns chosenGun = (EnumTypeOfGuns)Enum.Parse(typeof(EnumTypeOfGuns), Console.ReadLine().ToUpper());
                 if (Enum.IsDefined(typeof(EnumTypeOfGuns), chosenGun))
                 {
-                    AddShootingWithChosenGun(chosenGun);
+                    addingGun.AddShootingWithChosenGun(chosenGun);
                     Console.WriteLine("Write Y to add new shot or N to show shooting list ");
                     wantToAddNextGun = Console.ReadLine().ToUpper();
                 }
@@ -37,77 +36,20 @@ namespace ALXShootingRange
                 {
                     Console.WriteLine("No such gun in stock. Try again.");
                 }
-            }
-            if (wantToAddNextGun == "N")
-            {
-                ShowList();
-                Console.Write("Print receipt? (Y/N)? ");
-                var wantReceipt = Console.ReadLine().ToUpper();
-                if (wantReceipt == "Y")
-                {
-                    PrintReceipt();
-                }
-                else
-                {
-                    Console.Write("Sayonara.");
-                }
-            }
 
-            void AddShootingWithChosenGun(EnumTypeOfGuns choosingGun)
-            {
-                Gun newGun = new Gun(choosingGun);
-                Console.WriteLine("You chose: " + newGun.Type.ToString());
-                ListOfUsedGuns.Add(newGun.Type.ToString());
-                Console.Write("Full auto or single action (F/S)? ");
-                var shootingTypeChoice = Console.ReadLine().ToUpper();
-                Console.Write("Enter number of shots: ");
-                var chosenNumberOfShots = Int32.Parse(Console.ReadLine());
-                ShotsPerGun.Add(chosenNumberOfShots);
-                switch (shootingTypeChoice)
+                if (wantToAddNextGun == "N")
                 {
-                    case "S":
-                        PricePerGun.Add(Math.Round(newGun.ShootingSACost(chosenNumberOfShots),2));
-                        break;
-                    case "F":
-                        PricePerGun.Add(Math.Round(newGun.ShootingFACost(chosenNumberOfShots),2));
-                        break;
-                }
-            }    
-
-            void ShowList()
-            {
-                Console.WriteLine("List of shots");
-                for (int i = 0; i < ListOfUsedGuns.Count; i++)
-                {
-                    Console.WriteLine($"Gun: {ListOfUsedGuns[i]} Number of Shots: {ShotsPerGun[i]} Price netto: {PricePerGun[i]}");
-                }
-                Console.WriteLine("Summary netto:       \t" + SummingCost().ToString());
-                Console.WriteLine("TAX 23%:             \t" + Math.Round((SummingCost() * 0.23), 2).ToString());
-                Console.WriteLine("To pay (VAT included)\t" + Math.Round((SummingCost() * 1.23), 2).ToString());
-            }
-
-            int SummingCost()
-            {
-                int sum=0;
-                foreach(int i in PricePerGun)
-                {
-                    sum += i;
-                }
-                return sum;
-            }
-
-            void PrintReceipt()
-            {         
-                using (StreamWriter writetext = new StreamWriter("receipt.txt"))
-                {
-                    writetext.WriteLine("List of shots");
-                    for (int i = 0; i < ListOfUsedGuns.Count; i++)
+                    addingGun.ShowList();
+                    Console.Write("Print receipt? (Y/N)? ");
+                    var wantReceipt = Console.ReadLine().ToUpper();
+                    if (wantReceipt == "Y")
                     {
-                        writetext.WriteLine($"Gun: {ListOfUsedGuns[i]} Number of Shots: {ShotsPerGun[i]} Price netto: {PricePerGun[i]}");
+                        addingGun.PrintReceipt();
                     }
-                    writetext.WriteLine("Summary netto:       \t" + SummingCost().ToString());
-                    writetext.WriteLine("TAX 23%:             \t" + Math.Round((SummingCost() * 0.23),2).ToString());
-                    writetext.WriteLine("To pay (VAT included)\t" + Math.Round((SummingCost() * 1.23), 2).ToString());
+                    else
+                    {
+                        Console.Write("Sayonara.");
+                    }
                 }
             }
         }

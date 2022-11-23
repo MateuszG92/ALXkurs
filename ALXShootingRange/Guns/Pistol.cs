@@ -8,8 +8,10 @@ namespace ALXShootingRange.Guns
 {
     public class Pistol : Gun
     {
-        public Pistol() : base(EnumTypeOfGuns.PISTOL)
+        public Pistol() : base()
         {
+            Type = EnumTypeOfGuns.PISTOL;
+            FullAutoMode = false;
         }
     }
 }

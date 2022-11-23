@@ -7,26 +7,47 @@ using System.Threading.Tasks;
 
 namespace ALXShootingRange.Guns
 {
-    public class Gun:IShooitingRange
+    public class Gun
     {
         public double OneShotCost;
-        public int NumberOfShots;
         public EnumTypeOfGuns Type;
+        public bool FullAutoMode;
 
-        public Gun(EnumTypeOfGuns type)
+        public Gun()
         {
-            Type = type;
             OneShotCost = 1;
         }
 
         public double ShootingSACost(int numberOfShots)
         {
-            NumberOfShots=numberOfShots;
             return OneShotCost*numberOfShots;
         }
         public double ShootingFACost(int numberOfShots)
         {
             return ShootingSACost(numberOfShots)*1.15;
+        }
+        public bool CheckingGunFeatures(string shootingTypeChoice, bool fullAutomode)
+        {
+            if (shootingTypeChoice == "S")
+            {
+            return false;
+            }
+            else if (shootingTypeChoice == "F")
+            {
+                if (fullAutomode == true)
+                {
+                return true;
+                }
+                else
+                {   
+                Console.WriteLine("Gun has no such feature adding as single action shot");
+                return false;
+                }    
+            }
+            else
+            {
+                return false;
+            };   
         }
     }
 }
