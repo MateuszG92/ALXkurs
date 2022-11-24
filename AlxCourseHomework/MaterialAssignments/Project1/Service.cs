@@ -17,6 +17,7 @@ namespace AlxCourseHomework.MaterialAssignments.Project1
             trainee1.ShowWorker();
             trainee1.ChangeContract(trainee1);
             trainee1.Overtime = 50;
+            Console.WriteLine(trainee1.Overtime);
             trainee1.CalculateSalary();
             trainee1.ShowWorker();
             trainee1.ShowSalary();

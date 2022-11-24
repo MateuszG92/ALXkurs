@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AlxCourseHomework.MaterialAssignments.Project1
 {
-    public class FullTime : Worker
+    public class FullTime : Worker, IInterface
     {
-        public FullTime(string name, int overtime) : base()
+        public FullTime(string name, double overtime) : base()
         {
             MonthlyRate = 5000;
             Overtime = overtime;
