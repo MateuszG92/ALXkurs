@@ -1,5 +1,4 @@
-﻿using AlxCourseHomework.MaterialAssignments.Project1.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Drawing;
@@ -11,38 +10,40 @@ namespace AlxCourseHomework.MaterialAssignments.Project1
 {
     public abstract class Worker 
     {
-        public string FirstName;
-        public string LastName;
+        public string Name;
         public EnumContractTypes? Contract;
         public double Salary;
         public double MonthlyRate;
-        public int Overtime;
+        public double Overtime;
 
-        public Worker(string firstName, string lastName)
+        public Worker()
         {
             Contract = EnumContractTypes.TRAINEE;
-            Overtime = 0;
         }
 
-        public void ChangeContract()
+        public void ChangeContract(Worker worker)
         {
-            if (Contract == EnumContractTypes.TRAINEE)
+            if (worker.Contract == EnumContractTypes.TRAINEE)
             {
-                Contract = EnumContractTypes.FULLTIME;
+                worker.Contract = EnumContractTypes.FULLTIME;
+                worker.MonthlyRate = 5000;
             }
             else
             {
-                Contract = EnumContractTypes.TRAINEE;
+                worker.Contract = EnumContractTypes.TRAINEE;
+                worker.MonthlyRate = 1000;
+                worker.Overtime = 0;
             }
         } 
-        public void ShowSalary()
+        public double ShowSalary()
         {
-            Console.WriteLine(Salary.ToString());
+            Console.WriteLine(Math.Round(Salary,2).ToString());
+            return Salary;
         }
 
         public void Present()
         {
-            Console.WriteLine($"{FirstName}{LastName}{Salary.ToString()}");
+            Console.WriteLine($"{Name.ToLower().Replace(" ","")}{Math.Round(Salary,2)}");
         }
     }
 }

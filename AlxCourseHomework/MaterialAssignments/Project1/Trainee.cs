@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AlxCourseHomework.MaterialAssignments.Project1.Interfaces;
+
 
 
 namespace AlxCourseHomework.MaterialAssignments.Project1
@@ -11,16 +11,21 @@ namespace AlxCourseHomework.MaterialAssignments.Project1
     public class Trainee : Worker 
     {
 
-        public Trainee(string firstName, string lastName):base(firstName, lastName)
+        public Trainee(string name):base()
         {
             MonthlyRate = 1000;
-            FirstName = firstName;
-            LastName = lastName;
+            Name = name;
         }
         public double CalculateSalary()
         {
-            Salary = MonthlyRate;
-            return Salary;
+            return Salary = (MonthlyRate + (Overtime * (MonthlyRate / 60)));
+        }
+        public void ShowWorker()
+        {
+            Console.WriteLine($"Worker name: {Name}");
+            Console.WriteLine($"Worek contract: {Contract}");
+            Console.WriteLine($"Overtime: {Overtime}");
+            Console.WriteLine($"Salary: {Math.Round(Salary,2)}");
         }
     }
 }

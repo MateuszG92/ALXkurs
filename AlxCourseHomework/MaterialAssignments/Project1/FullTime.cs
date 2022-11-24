@@ -8,18 +8,23 @@ namespace AlxCourseHomework.MaterialAssignments.Project1
 {
     public class FullTime : Worker
     {
-        public FullTime(string firstName, string lastName, int overtime) : base(firstName, lastName)
+        public FullTime(string name, int overtime) : base()
         {
             MonthlyRate = 5000;
             Overtime = overtime;
-            FirstName = firstName;
-            LastName = lastName;
+            Name = name;
             Contract = EnumContractTypes.FULLTIME;
         }
         public double CalculateSalary()
         {
-            Salary = MonthlyRate+(Overtime/60);
-            return Salary;
+            return Salary=(MonthlyRate + (Overtime * (MonthlyRate / 60)));
+        }
+        public void ShowWorker()
+        {
+            Console.WriteLine($"Worker name: {Name}");
+            Console.WriteLine($"Worek contract: {Contract}");
+            Console.WriteLine($"Overtime: {Overtime}");
+            Console.WriteLine($"Salary: {Math.Round(Salary, 2)}");
         }
     }
 }
