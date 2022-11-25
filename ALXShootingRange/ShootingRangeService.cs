@@ -28,7 +28,7 @@ namespace ALXShootingRange
                 EnumTypeOfGuns chosenGun = (EnumTypeOfGuns)Enum.Parse(typeof(EnumTypeOfGuns), Console.ReadLine().ToUpper());
                 if (Enum.IsDefined(typeof(EnumTypeOfGuns), chosenGun))
                 {
-                    addingGun.AddShootingWithChosenGun(chosenGun);
+                    addingGun.ChoosingGunType(chosenGun);
                     Console.WriteLine("Write Y to add new shot or N to show shooting list ");
                     wantToAddNextGun = Console.ReadLine().ToUpper();
                 }

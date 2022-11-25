@@ -14,111 +14,54 @@ namespace ALXShootingRange
         List<string> ListOfUsedGuns = new List<string>();
         List<int> ShotsPerGun = new List<int>();
         List<double> PricePerGun = new List<double>();
+        Gun newGun;
 
-        public void AddShootingWithChosenGun(EnumTypeOfGuns choosingGun)
+        public void ChoosingGunType(EnumTypeOfGuns choosingGun)
         {
             if (choosingGun == EnumTypeOfGuns.SHOTGUN)
             {
-                Shotgun newShotgun = new Shotgun();
-                Console.WriteLine("You chose: " + newShotgun.Type.ToString());
-                Console.Write("Full auto or single action (F/S)? ");
-                var ShootingTypeChoice = Console.ReadLine().ToUpper();
-                Console.Write("Enter number of shots: ");
-                var chosenNumberOfShotsShotgun = Int32.Parse(Console.ReadLine());
-                if (newShotgun.CheckingGunFeatures(ShootingTypeChoice, newShotgun.FullAutoMode) == true)
-                {
-                    ListOfUsedGuns.Add(newShotgun.Type.ToString()+" full auto");
-                    ShotsPerGun.Add(chosenNumberOfShotsShotgun);
-                    PricePerGun.Add(Math.Round(newShotgun.ShootingFACost(chosenNumberOfShotsShotgun), 2));
-
-                }
-                else
-                {
-                    ListOfUsedGuns.Add(newShotgun.Type.ToString() + " single action");
-                    ShotsPerGun.Add(chosenNumberOfShotsShotgun);
-                    PricePerGun.Add(Math.Round(newShotgun.ShootingSACost(chosenNumberOfShotsShotgun), 2));
-                }
+                newGun = new Shotgun();
+                AddGunToList(newGun);
             }
             else if (choosingGun == EnumTypeOfGuns.PISTOL)
             {
-                Pistol newPistol = new Pistol();
-                Console.WriteLine("You chose: " + newPistol.Type.ToString());
-                Console.Write("Full auto or single action (F/S)? ");
-                var ShootingTypeChoice2 = Console.ReadLine().ToUpper();
-                Console.Write("Enter number of shots: ");
-                var chosenNumberOfShotsPistol = Int32.Parse(Console.ReadLine());
-                if (newPistol.CheckingGunFeatures(ShootingTypeChoice2, newPistol.FullAutoMode) == true)
-                {
-                    ListOfUsedGuns.Add(newPistol.Type.ToString()+" full auto");
-                    ShotsPerGun.Add(chosenNumberOfShotsPistol);
-                    PricePerGun.Add(Math.Round(newPistol.ShootingFACost(chosenNumberOfShotsPistol), 2));
-                }
-                else
-                {
-                    ListOfUsedGuns.Add(newPistol.Type.ToString() + " single action");
-                    ShotsPerGun.Add(chosenNumberOfShotsPistol);
-                    PricePerGun.Add(Math.Round(newPistol.ShootingSACost(chosenNumberOfShotsPistol), 2));
-                }
+                newGun = new Pistol();
+                AddGunToList(newGun);
             }
             else if (choosingGun == EnumTypeOfGuns.RIFLE)
             {
-                Rifle newRifle = new Rifle();
-                Console.Write("Full auto or single action (F/S)? ");
-                var ShootingTypeChoice3 = Console.ReadLine().ToUpper();
-                Console.Write("Enter number of shots: ");
-                var chosenNumberOfShotsRifle = Int32.Parse(Console.ReadLine());
-                if (newRifle.CheckingGunFeatures(ShootingTypeChoice3, newRifle.FullAutoMode) == true)
-                {
-                    ListOfUsedGuns.Add(newRifle.Type.ToString()+" full auto");
-                    ShotsPerGun.Add(chosenNumberOfShotsRifle);
-                    PricePerGun.Add(Math.Round(newRifle.ShootingFACost(chosenNumberOfShotsRifle), 2));
-                }
-                else
-                {
-                    ListOfUsedGuns.Add(newRifle.Type.ToString()+" single action");
-                    ShotsPerGun.Add(chosenNumberOfShotsRifle);
-                    PricePerGun.Add(Math.Round(newRifle.ShootingSACost(chosenNumberOfShotsRifle), 2));
-                }
+                newGun = new Rifle();
+                AddGunToList(newGun);
             }
             else if (choosingGun == EnumTypeOfGuns.SMG)
             {
-                SMG newSMG = new SMG();
-                Console.Write("Full auto or single action (F/S)? ");
-                var ShootingTypeChoice4 = Console.ReadLine().ToUpper();
-                Console.Write("Enter number of shots: ");
-                var chosenNumberOfShotsSMG = Int32.Parse(Console.ReadLine());
-                if (newSMG.CheckingGunFeatures(ShootingTypeChoice4, newSMG.FullAutoMode) == true)
-                {
-                    ListOfUsedGuns.Add(newSMG.Type.ToString()+" full auto");
-                    ShotsPerGun.Add(chosenNumberOfShotsSMG);
-                    PricePerGun.Add(Math.Round(newSMG.ShootingFACost(chosenNumberOfShotsSMG), 2));
-                }
-                else
-                {
-                    ListOfUsedGuns.Add(newSMG.Type.ToString() + " single action");
-                    ShotsPerGun.Add(chosenNumberOfShotsSMG);
-                    PricePerGun.Add(Math.Round(newSMG.ShootingSACost(chosenNumberOfShotsSMG), 2));
-                }
+                newGun = new SMG();
+                AddGunToList(newGun);
             }
             else if (choosingGun == EnumTypeOfGuns.MG)
             {
-                MG newMG = new MG();
-                Console.Write("Full auto or single action (F/S)? ");
-                var ShootingTypeChoice5 = Console.ReadLine().ToUpper();
-                Console.Write("Enter number of shots: ");
-                var chosenNumberOfShotsMG = Int32.Parse(Console.ReadLine());
-                if (newMG.CheckingGunFeatures(ShootingTypeChoice5, newMG.FullAutoMode) == true)
-                {
-                   ListOfUsedGuns.Add(newMG.Type.ToString() + " full auto");
-                   ShotsPerGun.Add(chosenNumberOfShotsMG);
-                   PricePerGun.Add(Math.Round(newMG.ShootingFACost(chosenNumberOfShotsMG), 2));
-                }
-                else
-                {
-                    ListOfUsedGuns.Add(newMG.Type.ToString() + " single action");
-                    ShotsPerGun.Add(chosenNumberOfShotsMG);
-                    PricePerGun.Add(Math.Round(newMG.ShootingSACost(chosenNumberOfShotsMG), 2));
-                }
+                newGun = new MG();
+                AddGunToList(newGun);
+            }
+        }
+        public void AddGunToList(Gun thisGun)
+        {
+            Console.WriteLine("You chose: " + thisGun.Type.ToString());
+            Console.Write("Full auto or single action (F/S)? ");
+            var ShootingTypeChoice = Console.ReadLine().ToUpper();
+            Console.Write("Enter number of shots: ");
+            var chosenNumberOfShotsShotgun = Int32.Parse(Console.ReadLine());
+            if (thisGun.CheckingGunFeatures(ShootingTypeChoice, thisGun.FullAutoMode) == true)
+            {
+                ListOfUsedGuns.Add(thisGun.Type.ToString() + " full auto");
+                ShotsPerGun.Add(chosenNumberOfShotsShotgun);
+                PricePerGun.Add(Math.Round(thisGun.ShootingFACost(chosenNumberOfShotsShotgun), 2));
+            }
+            else
+            {
+                ListOfUsedGuns.Add(thisGun.Type.ToString() + " single action");
+                ShotsPerGun.Add(chosenNumberOfShotsShotgun);
+                PricePerGun.Add(Math.Round(thisGun.ShootingSACost(chosenNumberOfShotsShotgun), 2));
             }
         }
         public void ShowList()
