@@ -15,14 +15,15 @@ namespace AlxCourseHomework.MaterialAssignments.Project1
         {
             MonthlyRate = 1000;
             Name = name;
+            Contract = EnumContractTypes.TRAINEE;
         }
-        public void ShowWorker()
+        public override void ShowWorker()
         {
             Console.WriteLine($"Worker name: {Name}");
             Console.WriteLine($"Worek contract: {Contract}");;
             Console.WriteLine($"Salary: {Math.Round(Salary,2)}");
         }
-        public double CalculateSalary()
+        public override double CalculateSalary()
         {
             return Salary = MonthlyRate;
         }

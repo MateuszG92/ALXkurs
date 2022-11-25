@@ -10,29 +10,26 @@ namespace AlxCourseHomework.MaterialAssignments.Project1
 {
     public abstract class Worker 
     {
-        public string Name;
-        public EnumContractTypes? Contract;
-        public double Salary;
-        public double MonthlyRate;
-        public double Overtime;
+        public string Name { get; set; }
+        public EnumContractTypes? Contract { get; set; }
+        public double Salary { get; set; }
+        public double MonthlyRate { get; set; }
+        public double Overtime { get; set; }
 
         public Worker()
         {
-            Contract = EnumContractTypes.TRAINEE;
+
         }
 
-        public void ChangeContract(Worker worker)
+        public static Worker ChangeContract(Worker worker)
         {
             if (worker.Contract == EnumContractTypes.TRAINEE)
             {
-                worker.Contract = EnumContractTypes.FULLTIME;
-                worker.MonthlyRate = 5000;
+                return new FullTime(worker.Name);
             }
             else
             {
-                worker.Contract = EnumContractTypes.TRAINEE;
-                worker.MonthlyRate = 1000;
-                worker.Overtime = 0;
+                return new Trainee(worker.Name);
             }
         } 
         public double ShowSalary()
@@ -44,6 +41,16 @@ namespace AlxCourseHomework.MaterialAssignments.Project1
         public void Present()
         {
             Console.WriteLine($"{Name.ToLower().Replace(" ","")}{Math.Round(Salary,2)}");
+        }
+        public virtual void ShowWorker()
+        {
+            Console.WriteLine($"Worker name: {Name}");
+            Console.WriteLine($"Worek contract: {Contract}"); ;
+            Console.WriteLine($"Salary: {Math.Round(Salary, 2)}");
+        }
+        public virtual double CalculateSalary()
+        {
+            return Salary = MonthlyRate;
         }
     }
 }
