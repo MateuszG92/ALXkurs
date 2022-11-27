@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AlxCourseHomework.MaterialAssignments.Project1
 {
-    public class Trainee : Worker , IInterface
+    public class Trainee : Worker , IWorker
     {
 
         public Trainee(string name):base()

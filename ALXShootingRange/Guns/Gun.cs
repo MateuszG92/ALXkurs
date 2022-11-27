@@ -22,10 +22,12 @@ namespace ALXShootingRange.Guns
         {
             return OneShotCost*numberOfShots;
         }
+
         public double ShootingFACost(int numberOfShots)
         {
             return ShootingSACost(numberOfShots)*1.15;
         }
+
         public bool CheckingGunFeatures(string shootingTypeChoice, bool fullAutomode)
         {
             if (shootingTypeChoice == "S")

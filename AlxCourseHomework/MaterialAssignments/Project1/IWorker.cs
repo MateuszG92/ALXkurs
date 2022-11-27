@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlxCourseHomework.MaterialAssignments.Project1
 {
-    public interface IInterface
+    public interface IWorker
     {
         void ShowWorker();
         double CalculateSalary();

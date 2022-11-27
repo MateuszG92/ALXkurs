@@ -44,6 +44,7 @@ namespace ALXShootingRange
                 AddGunToList(newGun);
             }
         }
+
         public void AddGunToList(Gun thisGun)
         {
             Console.WriteLine("You chose: " + thisGun.Type.ToString());
@@ -64,6 +65,7 @@ namespace ALXShootingRange
                 PricePerGun.Add(Math.Round(thisGun.ShootingSACost(chosenNumberOfShotsShotgun), 2));
             }
         }
+
         public void ShowList()
         {
             Console.WriteLine("List of shots");
@@ -85,6 +87,7 @@ namespace ALXShootingRange
             }
             return sum;
         }
+
         public void PrintReceipt()
         {
             using (StreamWriter writetext = new StreamWriter("receipt.txt"))

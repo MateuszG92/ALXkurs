@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlxCourseHomework.MaterialAssignments.Project1
 {
-    public class FullTime : Worker, IInterface
+    public class FullTime : Worker, IWorker
     {
         public FullTime(string name) : base()
         {
