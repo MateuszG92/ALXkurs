@@ -11,38 +11,62 @@ namespace CommonFunctionalities.Services
 {
     public class ExpressionService : IExpressionService
     {
-        public double ProcessExpression(string expression)
+        public decimal ProcessExpression(string expression)
         {
             var result = CalculateExpression(expression);
             return result;
         }
 
-        private double CalculateExpression(string expression)
+        private decimal CalculateExpression(string expression)
         {
-            List<double> numbers = new List<double>();
+            List<decimal> numbers = new List<decimal>();
             List<char> operations = new List<char>();
             var numberBuilder = new StringBuilder();
             var expressionArray = expression.ToCharArray();
-
-            for (int i = 0; i < expressionArray.Length; i++)
+            
+            if (expressionArray[0] == '-')
             {
-                if (Char.IsDigit(expressionArray[i]) || expressionArray[i] == ',')
+                for (int j = 0; j < 1; j++)
                 {
-                    numberBuilder.Append(expressionArray[i]);
+                    numberBuilder.Append('-');
                 }
-                else
+                for (int i = 1; i < expressionArray.Length; i++)
                 {
-                    var number = Convert.ToDouble(numberBuilder.ToString());
-                    numberBuilder.Clear();
-                    numbers.Add(number);
-                    operations.Add(expressionArray[i]);
+                    if (Char.IsDigit(expressionArray[i]) || expressionArray[i] == ',')
+                    {
+                        numberBuilder.Append(expressionArray[i]);
+                    }
+                    else
+                    {
+                        var number = Convert.ToDecimal(numberBuilder.ToString());
+                        numberBuilder.Clear();
+                        numbers.Add(number);
+                        operations.Add(expressionArray[i]);
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < expressionArray.Length; i++)
+                {
+                    if (Char.IsDigit(expressionArray[i]) || expressionArray[i] == ',')
+                    {
+                        numberBuilder.Append(expressionArray[i]);
+                    }
+                    else
+                    {
+                        var number = Convert.ToDecimal(numberBuilder.ToString());
+                        numberBuilder.Clear();
+                        numbers.Add(number);
+                        operations.Add(expressionArray[i]);
+                    }
                 }
             }
             var result = PerformOperations(numbers, operations);
             return result;
         }
 
-        private double PerformOperations(List<double> numbers, List<char> operations)
+        private decimal PerformOperations(List<decimal> numbers, List<char> operations)
         {
             var result = numbers[0];
             for (int i = 1; i < numbers.Count; i++)
@@ -53,7 +77,7 @@ namespace CommonFunctionalities.Services
             return result;
         }
 
-        private double PerformOperation(char operationChar, double x, double y)
+        private decimal PerformOperation(char operationChar, decimal x, decimal y)
         {
             switch (operationChar)
             {

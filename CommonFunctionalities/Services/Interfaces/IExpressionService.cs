@@ -8,6 +8,6 @@ namespace CommonFunctionalities.Services.Interface
 {
     public interface IExpressionService
     {
-        double ProcessExpression(string expression);
+        decimal ProcessExpression(string expression);
     }
 }
