@@ -49,8 +49,9 @@ namespace CalculatorFormApp
             AppendExpression(button.Text);
             var expression = ResultTextBox.Text;
             var result = ExpressionService.ProcessExpression(expression);
-            ResultTextBox.Text = result.ToString();
             ExpressionBuilder.Clear();
+            ResultTextBox.Text = result.ToString();
+            AppendExpression(result.ToString());
         }
 
         private void AppendExpression(string expressionPart)

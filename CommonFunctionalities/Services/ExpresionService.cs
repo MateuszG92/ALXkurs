@@ -63,6 +63,8 @@ namespace CommonFunctionalities.Services
                 }
             }
             var result = PerformOperations(numbers, operations);
+            numbers.Clear();
+            numbers.Add(result);
             return result;
         }
 
