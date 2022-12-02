@@ -12,6 +12,7 @@ namespace ALXShootingRange.Guns
         {
             Type = EnumTypeOfGuns.SHOTGUN;
             FullAutoMode = true;
+            OneShotCost = 8;
         }
     }
 }

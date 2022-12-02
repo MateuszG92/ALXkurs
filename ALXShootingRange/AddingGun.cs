@@ -51,18 +51,18 @@ namespace ALXShootingRange
             Console.Write("Full auto or single action (F/S)? ");
             var ShootingTypeChoice = Console.ReadLine().ToUpper();
             Console.Write("Enter number of shots: ");
-            var chosenNumberOfShotsShotgun = Int32.Parse(Console.ReadLine());
+            var chosenNumberOfShots = Int32.Parse(Console.ReadLine());
             if (thisGun.CheckingGunFeatures(ShootingTypeChoice, thisGun.FullAutoMode) == true)
             {
                 ListOfUsedGuns.Add(thisGun.Type.ToString() + " full auto");
-                ShotsPerGun.Add(chosenNumberOfShotsShotgun);
-                PricePerGun.Add(Math.Round(thisGun.ShootingFACost(chosenNumberOfShotsShotgun), 2));
+                ShotsPerGun.Add(chosenNumberOfShots);
+                PricePerGun.Add(Math.Round(thisGun.ShootingFACost(chosenNumberOfShots), 2));
             }
             else
             {
                 ListOfUsedGuns.Add(thisGun.Type.ToString() + " single action");
-                ShotsPerGun.Add(chosenNumberOfShotsShotgun);
-                PricePerGun.Add(Math.Round(thisGun.ShootingSACost(chosenNumberOfShotsShotgun), 2));
+                ShotsPerGun.Add(chosenNumberOfShots);
+                PricePerGun.Add(Math.Round(thisGun.ShootingSACost(chosenNumberOfShots), 2));
             }
         }
 
@@ -74,20 +74,26 @@ namespace ALXShootingRange
                 Console.WriteLine($"Gun: {ListOfUsedGuns[i]} number of Shots: {ShotsPerGun[i]} Price netto: {PricePerGun[i]}");
             }
             Console.WriteLine("Summary netto:       \t" + SummingCost().ToString());
-            Console.WriteLine("TAX 23%:             \t" + Math.Round((SummingCost() * 0.23), 2).ToString());
-            Console.WriteLine("To pay (VAT included)\t" + Math.Round((SummingCost() * 1.23), 2).ToString());
+            Console.WriteLine("TAX 23%:             \t" + Math.Round(CalculateTax(23), 2).ToString());
+            Console.WriteLine("To pay (VAT included)\t" + Math.Round((SummingCost() - CalculateTax(23)), 2).ToString());
         }
 
-        public int SummingCost()
+        public decimal SummingCost()
         {
-            int sum = 0;
-            foreach (int i in PricePerGun)
+            decimal sum = 0;
+            foreach (decimal i in PricePerGun)
             {
                 sum += i;
             }
             return sum;
         }
 
+        public decimal CalculateTax(decimal taxCharge)
+        {
+            decimal Tax;
+            Tax = SummingCost() * taxCharge / 100;
+            return Tax;
+        }
         public void PrintReceipt()
         {
             using (StreamWriter writetext = new StreamWriter("receipt.txt"))
@@ -98,8 +104,8 @@ namespace ALXShootingRange
                     writetext.WriteLine($"Gun: {ListOfUsedGuns[i]} number of Shots: {ShotsPerGun[i]} Price netto: {PricePerGun[i]}");
                 }
                 writetext.WriteLine("Summary netto:       \t" + SummingCost().ToString());
-                writetext.WriteLine("TAX 23%:             \t" + Math.Round((SummingCost() * 0.23), 2).ToString());
-                writetext.WriteLine("To pay (VAT included)\t" + Math.Round((SummingCost() * 1.23), 2).ToString());
+                writetext.WriteLine("TAX 23%:             \t" + Math.Round(CalculateTax(23), 2).ToString()); 
+                writetext.WriteLine("To pay (VAT included)\t" + Math.Round((SummingCost() - CalculateTax(23)), 2).ToString());
             }
         }
     }

@@ -12,6 +12,7 @@ namespace ALXShootingRange.Guns
         {
             Type=EnumTypeOfGuns.SMG;
             FullAutoMode = true;
+            OneShotCost = 3;
         }
     }
 }

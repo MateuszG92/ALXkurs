@@ -12,6 +12,7 @@ namespace ALXShootingRange.Guns
         {
             Type = EnumTypeOfGuns.RIFLE;
             FullAutoMode = false;
+            OneShotCost = 10;
         }
     }
 }

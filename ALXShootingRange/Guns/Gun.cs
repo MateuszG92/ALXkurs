@@ -15,7 +15,7 @@ namespace ALXShootingRange.Guns
 
         public Gun()
         {
-            OneShotCost = 1;
+
         }
 
         public double ShootingSACost(int numberOfShots)
