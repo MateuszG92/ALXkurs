@@ -98,10 +98,10 @@ namespace LottoFormapp
                 WinTextbox.Text = "Trafi³eœ trójkê. Zwróci³ Ci sie kupon.";
                 break;
             case 4:
-                WinTextbox.Text = "Trafi³eœ czwórkê. Coœ tam wygra³eœ";
+                WinTextbox.Text = "Trafi³eœ czwórkê. Coœ tam wygra³eœ.";
                 break;
             case 5:
-                WinTextbox.Text = "Trafi³eœ PIÊÆ liczbe. Jesteœ bogate";
+                WinTextbox.Text = "Trafi³eœ PIÊÆ liczb. Jesteœ bogaty.";
                 break;
             case 6:
                 WinTextbox.Text = "ROZBIJASZ BANK";
