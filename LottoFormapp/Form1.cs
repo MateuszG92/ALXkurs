@@ -41,7 +41,6 @@ namespace LottoFormapp
 
         private void DrawButton_Click(object sender, EventArgs e)
         {
-            
             if (ChosenNumberList.Count == 6)
             {
                 DrawingNumbers();
@@ -109,7 +108,6 @@ namespace LottoFormapp
                 WinTextbox.Text = "ROZBIJASZ BANK";
                 break;
             }
-            winningTier = 0;
         }
     }
 }
