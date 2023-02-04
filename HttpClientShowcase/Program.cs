@@ -1,4 +1,5 @@
 ﻿using HttpClientShowcase;
+using HttpClientShowcase.Models;
 
 //var jsonStrings = serializationDemo.RunSerialization();
 //serializationDemo.RunDeserialization(jsonStrings);
@@ -9,4 +10,11 @@ var httpClientDemo = new HttpClientDemo(client);
 //await httpClientDemo.GetRandomJoke();
 //await httpClientDemo.GetRandomCatInfo();
 //await httpClientDemo.GetRandomDogImage();
-await httpClientDemo.PredictGender("Mateusz"); 
+//await httpClientDemo.PredictGender("Mateusz"); 
+var email = new Email
+{
+    To = "mateuszg00@gmail.com",
+    Subject = "Test",
+    Message = "You're awesome"
+}; 
+await httpClientDemo.SendEmail(email);

@@ -11,6 +11,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace HttpClientShowcase
 {
@@ -77,7 +78,14 @@ namespace HttpClientShowcase
 
         public async Task SendEmail(Email email)
         {
-            
+            var baseRequestUri = "https://cnemailingservice20230203214349.azurewebsites.net/api/CNEMailingFunction";
+            var emailJson = JsonConvert.SerializeObject(email);
+            var requestContent=new StringContent(emailJson);
+            var requestMessage = new HttpRequestMessage(HttpMethod.Post, baseRequestUri);
+            requestMessage.Content = requestContent;
+            requestMessage.Headers.Add("x-functions-key", "klucz dostępu");
+            var result = await _httpClient.SendAsync(requestMessage);
+            Console.WriteLine(result);
         }
 
         private void SaveImage(string imageUri, string fileName)
